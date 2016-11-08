@@ -1,0 +1,13 @@
+.title {
+	text-align: center;
+}
+
+.cell {
+	border: 8px solid orange;
+	border-radius: 5px;
+	height: 100px;
+	text-align: center;
+	font-size: 3em;
+	font-weight: 600;
+	color: brown;
+}

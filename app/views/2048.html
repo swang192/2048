@@ -1,0 +1,15 @@
+<div class="container" keypress-dir>
+	<div class="scores">
+		<div> {{ currScore }} </div>
+		<div> {{ highScore }} </div>
+	</div>
+	<button ng-click="newGame()">New Game</button>
+	<div class="board">
+		<div ng-repeat="row in gameBoard track by $index" class="row">
+			<div ng-repeat="cell in row track by $index" ng-class='{"col-xs-offset-4":$first}' class="col-xs-1 cell">
+				{{ cell }}
+			</div>
+		</div>
+	</div>
+
+</div>
