@@ -3,11 +3,69 @@
 }
 
 .cell {
-	border: 8px solid orange;
+	border: 8px solid #C4B3A1;
 	border-radius: 5px;
 	height: 100px;
 	text-align: center;
 	font-size: 3em;
 	font-weight: 600;
-	color: brown;
+	color: grey;
+}
+
+.lvl0 {
+	color: transparent;
+	background-color: #CCBAA8;
+}
+
+.lvl2 {
+	background-color: #F4E8E0;
+}
+
+.lvl4 {
+	background-color: #DECAC5;
+}
+
+.lvl8 {
+	background-color: #FAB0A4;
+}
+
+.lvl16 {
+	background-color: #FAA176;
+}
+
+.lvl32 {
+	color: #E0E0D8;
+	background-color: #C4A67E;
+}
+
+.lvl64 {
+	background-color: #8BC998;
+}
+
+.lvl128 {
+	font-size: 2em;
+	background-color: #8BC9D3;
+}
+
+.lvl256 {
+	font-size: 2em;
+	background-color: #8BA7D3;
+}
+
+.lvl512 {
+	font-size: 2em;
+	color: #E0E0D8;
+	background-color: #8B7BD3;
+}
+
+.lvl1024 {
+	font-size: 1em;
+	color: #E0E0D8;
+	background-color: #5D4ED3;
+}
+
+.lvl2048 {
+	font-size: 1em;
+	color: #E0E0D8;
+	background-color: #62225C;
 }

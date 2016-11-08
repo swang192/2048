@@ -2,7 +2,7 @@ app.controller("twenty48Controller", ['$scope', 'twenty48Factory', function($sco
 
 	$scope.gameBoard = [];
 	$scope.currScore;
-	$scope.highScore;
+	$scope.highScore = 0;
 
 	$scope.newGame = function() {
 		$scope.currScore = 0;
@@ -30,5 +30,9 @@ app.controller("twenty48Controller", ['$scope', 'twenty48Factory', function($sco
 		}
 
 	};
+
+	$scope.getCellVal = function(row, col) {
+		return $scope.gameBoard[row][col];
+	}
 
 }]);
