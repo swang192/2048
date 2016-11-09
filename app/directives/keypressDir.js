@@ -1,7 +1,6 @@
 app.directive('keypressDir', function($document) {
 	return function (scope) {
             $document.bind('keydown', function (e) {
-                console.log(e);
                 var keyCode = e.which || e.keyCode;
                     switch (keyCode) {
                         case 37:

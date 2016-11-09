@@ -1,10 +1,19 @@
 <div class="container" keypress-dir>
-	<div class="scores">
-		<div> Score: {{ currScore }} </div>
-		<div> High Score: {{ highScore }} </div>
-	</div>
-	<button ng-click="newGame()">New Game</button>
+	<div ng-class='{"hidden": getStatus() === "Running", "bg-success": getStatus() === "Win", "bg-danger": getStatus() === "Over"}' class="message">{{ message }}</div>
+	<br>
 	<div class="board">
+		<div class="col-xs-offset-4 scores">
+			<div ng-click="newGame()" class="newGame-btn">New Game</div>
+			<div class="score"> 
+				<h5>Score</h5>
+				{{ currScore }} 
+			</div>
+			<div class="score">
+				<h5>High Score</h5>  
+				{{ highScore }} 
+			</div>
+		</div>
+		<br>
 		<div ng-repeat="row in gameBoard track by $index" class="row">
 			<div ng-repeat="cell in row track by $index" ng-class='{"col-xs-offset-4":$first, 
 			"lvl0": getCellVal($parent.$index, $index) === 0, 

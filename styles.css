@@ -1,15 +1,66 @@
-.title {
+.container {
 	text-align: center;
 }
 
+.hidden {
+	visibility: hidden;
+}
+
+.message {
+	padding: 10px;
+}
+
+
+.title {
+	text-align: center;
+	font-weight: 600;
+}
+
 .cell {
-	border: 8px solid #C4B3A1;
-	border-radius: 5px;
+	border: 9px solid #C4B3A1;
+	border-radius: 6px;
 	height: 100px;
 	text-align: center;
 	font-size: 3em;
 	font-weight: 600;
 	color: grey;
+	margin-left: -8px;
+	margin-top: -8px;
+	padding-top: 10px;
+}
+
+.score, .message {
+	font-size: 1.5em;
+	line-height: 10px;
+}
+
+.score, .newGame-btn {
+	text-align: center;
+	background-color: #DECAC5;
+	font-weight: 600;
+	width: 105px;
+	height: 60px;
+	border-radius: 5px;
+	display: block;
+	float: left;
+	margin-left: 10px;
+}
+
+.newGame-btn {
+	background-color: #FCDEA0;
+	font-size: 1.5em;
+	line-height: 22px;
+	padding-top: 9px;
+	cursor: pointer;
+}
+
+.newGame-btn:active {
+	background-color: #FCC58F;
+	color: #F4E8E0;
+}
+
+.scores {
+	height: 60px;
 }
 
 .lvl0 {
@@ -34,7 +85,7 @@
 }
 
 .lvl32 {
-	color: #E0E0D8;
+	color: #F4E8E0;
 	background-color: #C4A67E;
 }
 
@@ -44,28 +95,34 @@
 
 .lvl128 {
 	font-size: 2em;
+	padding-top: 20px;
 	background-color: #8BC9D3;
 }
 
 .lvl256 {
 	font-size: 2em;
+	padding-top: 20px;
+	color: #F4E8E0;
 	background-color: #8BA7D3;
 }
 
 .lvl512 {
 	font-size: 2em;
-	color: #E0E0D8;
+	padding-top: 20px;
+	color: #F4E8E0;
 	background-color: #8B7BD3;
 }
 
 .lvl1024 {
-	font-size: 1em;
-	color: #E0E0D8;
+	font-size: 1.5em;
+	padding-top: 25px;
+	color: #F4E8E0;
 	background-color: #5D4ED3;
 }
 
 .lvl2048 {
-	font-size: 1em;
-	color: #E0E0D8;
+	font-size: 1.5em;
+	padding-top: 25px;
+	color: #F4E8E0;
 	background-color: #62225C;
 }

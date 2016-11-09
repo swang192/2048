@@ -3,9 +3,11 @@ app.controller("twenty48Controller", ['$scope', 'twenty48Factory', function($sco
 	$scope.gameBoard = [];
 	$scope.currScore;
 	$scope.highScore = 0;
+	$scope.message;
 
 	$scope.newGame = function() {
 		$scope.currScore = 0;
+		$scope.message = "";
 		$scope.gameBoard = twenty48Factory.init();
 	};
 
@@ -14,25 +16,31 @@ app.controller("twenty48Controller", ['$scope', 'twenty48Factory', function($sco
 	$scope.newMove = function(dir) {
 		//Takes a direction and updates board with moves in that direction
 		//Updates score
-		console.log(twenty48Factory.getStatus());
 		if (twenty48Factory.getStatus() === "Running") {
 			$scope.gameBoard = twenty48Factory.makeMove(dir);
-			console.log("GAMEBOARD: " + $scope.gameBoard);
 			$scope.currScore = twenty48Factory.getCurrScore();
 			$scope.highScore = twenty48Factory.getHighScore();
+
 			if ($scope.currScore >= $scope.highScore) {
 				$scope.highScore = $scope.currScore;
 			}
-		}
-
-		else {  //2048 Reached
-			alert("You win!");
+			console.log(twenty48Factory.getStatus());
+			if (twenty48Factory.getStatus() === "Win") {
+				$scope.message = "Congrats! You won!";
+			}
+			else if (twenty48Factory.getStatus() === "Over") {
+				$scope.message = "Game over!"
+			}
 		}
 
 	};
 
+	$scope.getStatus = function() {
+		return twenty48Factory.getStatus();
+	};
+
 	$scope.getCellVal = function(row, col) {
 		return $scope.gameBoard[row][col];
-	}
+	};
 
 }]);
