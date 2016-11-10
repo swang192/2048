@@ -71,6 +71,7 @@ app.factory("twenty48Factory", function() {
 
 	factory.init = function() {
 		//Reset board
+		currScore = 0;
 		status = "Running";
 		for (var i = 0; i < 4; i++) {
 			for (var j = 0; j < 4; j++) {
@@ -221,6 +222,11 @@ app.factory("twenty48Factory", function() {
 				}
 			}
 		}
+		//Update Score
+		if (currScore >= highScore) {
+			highScore = currScore;
+		}
+
 		//Add new cell
 		var cells = getFreeCells();
 		if (cells.length > 0) {

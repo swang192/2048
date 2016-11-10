@@ -6,9 +6,10 @@ app.controller("twenty48Controller", ['$scope', 'twenty48Factory', function($sco
 	$scope.message;
 
 	$scope.newGame = function() {
-		$scope.currScore = 0;
 		$scope.message = "";
 		$scope.gameBoard = twenty48Factory.init();
+		$scope.currScore = twenty48Factory.getCurrScore();
+		$scope.highScore = twenty48Factory.getHighScore();
 	};
 
 	$scope.newGame();
@@ -20,10 +21,6 @@ app.controller("twenty48Controller", ['$scope', 'twenty48Factory', function($sco
 			$scope.gameBoard = twenty48Factory.makeMove(dir);
 			$scope.currScore = twenty48Factory.getCurrScore();
 			$scope.highScore = twenty48Factory.getHighScore();
-
-			if ($scope.currScore >= $scope.highScore) {
-				$scope.highScore = $scope.currScore;
-			}
 			console.log(twenty48Factory.getStatus());
 			if (twenty48Factory.getStatus() === "Win") {
 				$scope.message = "Congrats! You won!";
