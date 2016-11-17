@@ -1,4 +1,4 @@
-var app = angular.module("twenty48", ['ngRoute']);
+var app = angular.module("twenty48", ['ngRoute', 'swipe']);
 
 app.config(function($routeProvider){
 	$routeProvider

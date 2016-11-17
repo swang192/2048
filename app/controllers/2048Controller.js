@@ -5,6 +5,10 @@ app.controller("twenty48Controller", ['$scope', 'twenty48Factory', function($sco
 	$scope.highScore = 0;
 	$scope.message;
 
+	$scope.swipe = function() {
+		console.log("right");
+	}
+
 	$scope.newGame = function() {
 		$scope.message = "";
 		$scope.gameBoard = twenty48Factory.init();

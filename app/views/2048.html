@@ -1,8 +1,11 @@
-<div class="container" keypress-dir>
+<div class="game-container" keypress-dir ng-swipe-left="newMove(37)"
+									ng-swipe-up="newMove(38)"
+									ng-swipe-right="newMove(39)"
+									ng-swipe-down="newMove(40)">
 	<div ng-class='{"hidden": getStatus() === "Running", "bg-success": getStatus() === "Win", "bg-danger": getStatus() === "Over"}' class="message">{{ message }}</div>
 	<br>
 	<div class="board">
-		<div class="col-xs-offset-4 scores">
+		<div class="scores">
 			<div ng-click="newGame()" class="newGame-btn">New Game</div>
 			<div class="score"> 
 				<h5>Score</h5>
@@ -14,8 +17,8 @@
 			</div>
 		</div>
 		<br>
-		<div ng-repeat="row in gameBoard track by $index" class="row">
-			<div ng-repeat="cell in row track by $index" ng-class='{"col-xs-offset-4":$first, 
+		<div ng-repeat="row in gameBoard track by $index" class="cell-row">
+			<div ng-repeat="cell in row track by $index" ng-class='{
 			"lvl0": getCellVal($parent.$index, $index) === 0, 
 			"lvl2": getCellVal($parent.$index, $index) === 2,
 			"lvl4": getCellVal($parent.$index, $index) === 4,
@@ -27,7 +30,7 @@
 			"lvl256": getCellVal($parent.$index, $index) === 256,
 			"lvl512": getCellVal($parent.$index, $index) === 512,
 			"lvl1024": getCellVal($parent.$index, $index) === 1024,
-			"lvl2048": getCellVal($parent.$index, $index) === 2048}' class="col-xs-1 cell">
+			"lvl2048": getCellVal($parent.$index, $index) === 2048}' class="cell">
 				{{ cell }}
 			</div>
 		</div>
